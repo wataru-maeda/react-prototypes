@@ -14,3 +14,4 @@
 - axios
 - json-server
 
+(npm install express express-graphql graphql axios json-server  --save)
