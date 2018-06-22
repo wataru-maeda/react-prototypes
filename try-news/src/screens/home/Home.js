@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from '../../assets/images/logo.svg';
 import './Home.css';
+import { apiKey } from '../../common/auth';
 
-export default class Home extends Component {  
+export default class Home extends Component {
+  componentWillMount() {
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`).then(res => {
+      console.log(res)
+    })
+  }
+
   render() {
     return (
       <div className="container">
