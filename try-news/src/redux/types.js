@@ -1,0 +1,1 @@
+export const NEWS_HEADLINE = 'NEWS_HEADLINE';
