@@ -1,6 +1,6 @@
 
   .container {
-    text-align: center;
+    /* text-align: center; */
   }
   
   .logo {
@@ -16,6 +16,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
   }
   
   .title {
@@ -24,6 +25,11 @@
   
   .intro {
     font-size: large;
+  }
+
+  .headline {
+    flex: 1;
+    background-color: #fafafa
   }
   
   @keyframes logo-spin {

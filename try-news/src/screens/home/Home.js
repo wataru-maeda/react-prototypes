@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import logo from '../../assets/images/logo.svg';
 import './Home.css';
-import { apiKey } from '../../common/auth';
+import * as NewsActions from '../../redux/actions/NewsActions';
+import { connect } from 'react-redux';
+import Card from '../../components/card';
 
-export default class Home extends Component {
+class Home extends Component {
   componentWillMount() {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`).then(res => {
-      console.log(res)
-    })
+    NewsActions.setHeadlineNews();
   }
 
   render() {
+    const { headline } = this.props;
     return (
       <div className="container">
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
-          <h1 className="title">Sample News App</h1>
+          <h1 className="title">News</h1>
         </header>
-        <p className="intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="headline">
+          { headline && headline.map((news, index) => {
+            return news.urlToImage ? <Card news={news} index={index}/> : <a/>
+          }) }
+        </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    headline: state.news.headline,
+  }
+}
+export default connect(mapStateToProps)(Home)
