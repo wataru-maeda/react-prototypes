@@ -28,8 +28,7 @@
   }
 
   .headline {
-    flex: 1;
-    background-color: #fafafa
+    width: 100%;
   }
   
   @keyframes logo-spin {

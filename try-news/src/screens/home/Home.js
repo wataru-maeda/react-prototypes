@@ -3,7 +3,7 @@ import logo from '../../assets/images/logo.svg';
 import './Home.css';
 import * as NewsActions from '../../redux/actions/NewsActions';
 import { connect } from 'react-redux';
-import NewsCard from '../../components/newsCard';
+import Card from '../../components/card';
 
 class Home extends Component {
   componentWillMount() {
@@ -18,11 +18,11 @@ class Home extends Component {
           <img src={logo} className="logo" alt="logo" />
           <h1 className="title">News</h1>
         </header>
-        <div className="headline">
+        <scroll className="headline">
           { headline && headline.map((news, index) => {
-            return news.urlToImage ? <NewsCard news={news} index={index}/> : <a/>
+            return news.urlToImage ? <Card news={news} index={index}/> : <a/>
           }) }
-        </div>
+        </scroll>
       </div>
     );
   }
