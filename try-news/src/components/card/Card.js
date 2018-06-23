@@ -5,17 +5,17 @@ export default (props) => {
     return (
         <div style={styles.container}>
           <img src={news.urlToImage} style={styles.image} alt="news" />
-          <text style={styles.title}>{news.title}</text>
+          <h1 style={styles.title}>{news.title}</h1>
+          <p style={styles.description}>{news.description}</p>
         </div>
     )
 };
 
 const styles = {
   container: {
-    width: '33%',
     flexDirection: 'column',
     dispay: 'inline',
-    margin: '16px',
+    margin: '24px',
     backgroundColor: '#fafafa',
   },
   image: {
@@ -23,7 +23,12 @@ const styles = {
     resizeMode: 'cover',
   },
   title: {
-    fontSize: '1em',
+    fontSize: '24px',
     width: '100%',
-  }
+  },
+  description: {
+    fontSize: '14px',
+    color: 'gray',
+    width: '100%',
+  },
 }

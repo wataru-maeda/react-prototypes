@@ -18,11 +18,11 @@ class Home extends Component {
           <img src={logo} className="logo" alt="logo" />
           <h1 className="title">News</h1>
         </header>
-        <scroll className="headline">
+        <table className="headline">
           { headline && headline.map((news, index) => {
-            return news.urlToImage ? <Card news={news} index={index}/> : <a/>
+            return <Card news={news} index={index}/>
           }) }
-        </scroll>
+        </table>
       </div>
     );
   }
