@@ -8,24 +8,26 @@ import Card from '../../components/card';
 class Home extends Component {
   componentWillMount() {
     NewsActions.setHeadlineNews();
+    NewsActions.setBitcoinNews();
   }
 
   render() {
-    const { headline } = this.props;
+    const { headline, bitcoin } = this.props;
     return (
       <div className="container">
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
           <h1 className="title">News</h1>
         </header>
-        <h1 className="subtitle">Top Business Headline</h1>
+        <h1 className="subtitle">Top business headlines in the US right now</h1>
         <div className="headline">
           { headline && headline.map(news => {
             return <Card news={news} />
           }) }
         </div>
+        <h1 className="subtitle">All articles about Bitcoin from the last 6 months</h1>
         <div className="headline">
-          { headline && headline.map(news => {
+          { bitcoin && bitcoin.map(news => {
             return <Card news={news} />
           }) }
         </div>
@@ -37,6 +39,7 @@ class Home extends Component {
 const mapStateToProps = state => {
   return {
     headline: state.news.headline,
+    bitcoin: state.news.bitcoin,
   }
 }
 export default connect(mapStateToProps)(Home)

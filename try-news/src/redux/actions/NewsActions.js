@@ -10,6 +10,12 @@ export const setHeadlineNews = () => {
   });
 };
 
+export const setBitcoinNews = () => {
+  api.fetchBitcoinNews().then(news => {
+    store.dispatch(storBitcoinNews(news));
+  });
+};
+
 // MARK - Getter
 
 export const getHeadlineNews = () => {
@@ -23,6 +29,15 @@ const storeHeadlineNews = news => {
   return dispatch => {
     dispatch({
       type: types.NEWS_HEADLINE,
+      payload: news,
+    });
+  };
+};
+
+const storBitcoinNews = news => {
+  return dispatch => {
+    dispatch({
+      type: types.NEWS_BITCOIN,
       payload: news,
     });
   };
