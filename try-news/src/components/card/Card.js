@@ -35,7 +35,7 @@ const styles = {
     resizeMode: 'cover',
   },
   title: {
-    fontSize: '100%',
+    fontSize: '2vw',
   },
   description: {
     fontSize: '80%',
