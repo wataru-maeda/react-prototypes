@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default (props) => {
-    const { news, index } = props;
+export default ({ news }) => {
     return (
         <div style={styles.container}>
           <img src={news.urlToImage} style={styles.image} alt="news" />
@@ -13,9 +12,11 @@ export default (props) => {
 
 const styles = {
   container: {
-    flexDirection: 'column',
+    float: 'left',
+    width: (window.innerWidth - 16 * 4) / 3,
     dispay: 'inline',
-    margin: '24px',
+    marginLeft: '16px',
+    marginTop: '16px',
     backgroundColor: '#fafafa',
   },
   image: {
@@ -24,11 +25,10 @@ const styles = {
   },
   title: {
     fontSize: '24px',
-    width: '100%',
   },
   description: {
     fontSize: '14px',
     color: 'gray',
-    width: '100%',
+    padding: '8px',
   },
 }

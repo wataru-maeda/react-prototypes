@@ -19,8 +19,8 @@ class Home extends Component {
           <h1 className="title">News</h1>
         </header>
         <table className="headline">
-          { headline && headline.map((news, index) => {
-            return <Card news={news} index={index}/>
+          { headline && headline.map(news => {
+            return <Card news={news} />
           }) }
         </table>
       </div>
