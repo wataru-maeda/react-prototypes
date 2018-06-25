@@ -18,11 +18,16 @@ class Home extends Component {
           <img src={logo} className="logo" alt="logo" />
           <h1 className="title">News</h1>
         </header>
-        <table className="headline">
+        <div className="headline">
           { headline && headline.map(news => {
             return <Card news={news} />
           }) }
-        </table>
+        </div>
+        <div className="headline">
+          { headline && headline.map(news => {
+            return <Card news={news} />
+          }) }
+        </div>
       </div>
     );
   }

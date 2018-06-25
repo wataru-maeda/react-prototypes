@@ -1,6 +1,6 @@
 
   .container {
-    /* text-align: center; */
+    text-align: center;
   }
   
   .logo {
@@ -28,9 +28,8 @@
   }
 
   .headline {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+    overflow: auto;
+    white-space: nowrap;
   }
   
   @keyframes logo-spin {
