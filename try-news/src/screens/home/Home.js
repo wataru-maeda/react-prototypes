@@ -9,10 +9,11 @@ class Home extends Component {
   componentWillMount() {
     NewsActions.setHeadlineNews();
     NewsActions.setBitcoinNews();
+    NewsActions.setTechNews();
   }
 
   render() {
-    const { headline, bitcoin } = this.props;
+    const { headline, bitcoin, tech } = this.props;
     return (
       <div className="container">
         <header className="header">
@@ -31,6 +32,12 @@ class Home extends Component {
             return <Card news={news} />
           }) }
         </div>
+        <h1 className="subtitle">Top headlines from TechCrunch right now</h1>
+        <div className="headline">
+          { tech && tech.map(news => {
+            return <Card news={news} />
+          }) }
+        </div>
       </div>
     );
   }
@@ -40,6 +47,7 @@ const mapStateToProps = state => {
   return {
     headline: state.news.headline,
     bitcoin: state.news.bitcoin,
+    tech: state.news.tech,
   }
 }
 export default connect(mapStateToProps)(Home)

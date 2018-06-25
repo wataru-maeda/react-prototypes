@@ -16,6 +16,12 @@ export const setBitcoinNews = () => {
   });
 };
 
+export const setTechNews = () => {
+  api.fetchTechNews().then(news => {
+    store.dispatch(storTechNews(news));
+  });
+};
+
 // MARK - Getter
 
 export const getHeadlineNews = () => {
@@ -38,6 +44,15 @@ const storBitcoinNews = news => {
   return dispatch => {
     dispatch({
       type: types.NEWS_BITCOIN,
+      payload: news,
+    });
+  };
+};
+
+const storTechNews = news => {
+  return dispatch => {
+    dispatch({
+      type: types.NEWS_TECH,
       payload: news,
     });
   };
