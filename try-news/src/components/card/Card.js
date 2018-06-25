@@ -26,7 +26,7 @@ const styles = {
   },
   imageContainer: {
     width: '100%',
-    height: window.innerWidth / 5,
+    height: window.innerWidth / 7,
     overflow: 'hidden',
     backgroundColor: 'lightGray',
   },

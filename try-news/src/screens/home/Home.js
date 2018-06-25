@@ -18,6 +18,7 @@ class Home extends Component {
           <img src={logo} className="logo" alt="logo" />
           <h1 className="title">News</h1>
         </header>
+        <h1 className="subtitle">Top Business Headline</h1>
         <div className="headline">
           { headline && headline.map(news => {
             return <Card news={news} />
