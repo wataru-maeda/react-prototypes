@@ -1,58 +1,45 @@
-  .Home {
-    text-align: center;
-    height: 100vh;
-  }
-  
-  .Home-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-  }
-  
-  .Home-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
-  }
-  
-  .Home-title {
-    font-size: 1.5em;
-  }
-  
-  .Home-intro {
-    font-size: large;
-  }
-  
-  @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
 
+/* desktop styles */
 
-  /* phone + tablet  */
-  @media (min-width: 576px) {
-    .Home {
-       background-color: green
-    }
-  }
-  
-  /* tablet */
-  @media (min-width: 768px) {
-    .Home {
-      background-color: yellow
-    }
-  }
+.home-container {
+  display: inline-block;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
 
-  /* laptop */
-  @media (min-width: 992px) {
-    .Home {
-      background-color: orange
-    }
-  }
+.home-header {
+  width: 100%;
+  height: 80px;
+  background-color: aquamarine;
+}
 
-  /* tv, desktop */
-  @media (min-width: 1200px) {
-    .Home {
-       background-color: red
-    }
+.home-left-menu {
+  float: left;
+  min-width: 100px;
+  width: 15%;
+  height: 100%;
+  background-color: blueviolet;
+}
+
+.home-contents {
+  float: left;
+  width: 70%;
+  height: 100%;
+  background-color: burlywood;
+}
+
+.home-right-menu {
+  float: right;
+  min-width: 100px;
+  width: 15%;
+  height: 100%;
+  background-color: coral;
+}
+
+/* phone styles*/
+@media (max-width: 576px) {
+  .home-container {
+      background-color: green
   }
+}

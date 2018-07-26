@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from '../../assets/images/logo.svg';
 import './Home.css';
 
 export default class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <header className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
-          <h1 className="Home-title">Welcome to Home</h1>
-        </header>
-        <p className="Home-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="home-container">
+        <div className="home-header">
+          Header Header Header Header Header Header Header Header
+          Header Header Header Header Header Header Header Header
+          Header Header Header Header Header Header Header Header
+        </div>
+        <span className="home-left-menu">
+          Left Menu Left Menu Left Menu Left Menu Left Menu Left Menu
+          Left Menu Left Menu Left Menu Left Menu Left Menu Left Menu
+          Left Menu Left Menu Left Menu Left Menu Left Menu Left Menu
+          Left Menu Left Menu Left Menu Left Menu Left Menu Left Menu
+        </span>
+        <span className="home-contents">
+          Constens Constens Constens Constens Constens Constens Constens
+          Constens Constens Constens Constens Constens Constens Constens
+          Constens Constens Constens Constens Constens Constens Constens
+          Constens Constens Constens Constens Constens Constens Constens
+        </span>
+        <span className="home-right-menu">
+          Right Menu Right Menu Right Menu Right Menu Right Menu Right Menu
+          Right Menu Right Menu Right Menu Right Menu Right Menu Right Menu
+          Right Menu Right Menu Right Menu Right Menu Right Menu Right Menu
+        </span>
       </div>
     );
   }
