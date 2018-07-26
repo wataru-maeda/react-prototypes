@@ -1,21 +1,27 @@
 
 /* desktop styles */
 
+:root {
+  --header-bg-color: #FFC107;
+  --header-height: auto;
+}
+
 .container {
-  width:100%;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 40px);
   text-align:center;
 }
 
 .head {
-  width:100%;  
-  min-height: 80px;
-  background: #FFC107;
+  width:100%;
+  min-height: 40px;
+  background: var(--header-bg-color);
 }
 
 .left {
   float:left;
-  width:15%;  
+  width:15%;
+  /* min-width: 100px; */
   height: 100%;
   background: #9C27B0;
 }
@@ -23,7 +29,7 @@
 .center {
   display: inline-block;
   margin:0 auto;
-  width:70%;
+  width: 70%;
   height: 100%;
   background: #E91E63;
 }
@@ -31,13 +37,22 @@
 .right {
   float:right;
   width:15%;
+  /* min-width: 100px; */
   height: 100%;
   background: #0000ff;
 }
 
 /* phone styles*/
 @media (max-width: 576px) {
-  .container {
-      background-color: green
+  .center {
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+    height: auto;
+  }
+  .right {
+    width: 100%;
+    height: auto;
   }
 }
