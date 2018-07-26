@@ -1,45 +1,43 @@
 
 /* desktop styles */
 
-.home-container {
-  display: inline-block;
-  text-align: center;
+.container {
+  width:100%;
   height: 100vh;
-  width: 100vw;
+  text-align:center;
 }
 
-.home-header {
-  width: 100%;
-  height: 80px;
-  background-color: aquamarine;
+.head {
+  width:100%;  
+  min-height: 80px;
+  background: #FFC107;
 }
 
-.home-left-menu {
-  float: left;
-  min-width: 100px;
-  width: 15%;
+.left {
+  float:left;
+  width:15%;  
   height: 100%;
-  background-color: blueviolet;
+  background: #9C27B0;
 }
 
-.home-contents {
-  float: left;
-  width: 70%;
+.center {
+  display: inline-block;
+  margin:0 auto;
+  width:70%;
   height: 100%;
-  background-color: burlywood;
+  background: #E91E63;
 }
 
-.home-right-menu {
-  float: right;
-  min-width: 100px;
-  width: 15%;
+.right {
+  float:right;
+  width:15%;
   height: 100%;
-  background-color: coral;
+  background: #0000ff;
 }
 
 /* phone styles*/
 @media (max-width: 576px) {
-  .home-container {
+  .container {
       background-color: green
   }
 }
