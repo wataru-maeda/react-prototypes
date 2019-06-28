@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './Home.css';
+import css from './Home.css';
+import Header from './Header';
 
 export default class Home extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="head">
-          Header Header Header Header Header Header Header Header Header Header Header Header Header Header Header
-          Header Header Header Header Header Header Header Header Header Header Header Header Header Header Header
-          Header Header Header Header Header Header Header Header Header Header Header Header Header Header Header
-          </div>
+      <div className={css.container}>
+        <Header />
         <div className="left">
           Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left
           Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left Left
