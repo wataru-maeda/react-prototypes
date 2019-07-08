@@ -8,7 +8,7 @@ const styles = {
     flexDirection: 'column',
     flex: 1,
     padding: 50,
-  }
+  },
 }
 
 export default class Home extends Component {

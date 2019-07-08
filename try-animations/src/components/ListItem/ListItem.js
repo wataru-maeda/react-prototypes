@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import Animation from '../Animation'
-import { Spring } from 'react-spring/renderprops'
+import Animation from '../Animation'
 import { colors } from '../../styles/theme'
 
 const styles = {
@@ -42,7 +41,7 @@ export default class ListItem extends Component {
   render() {
     const { delay = 0 } = this.props
     return (
-      <Spring
+      <Animation
         config={{
           delay,
           duration: 250,
@@ -55,18 +54,16 @@ export default class ListItem extends Component {
           opacity: 1,
           transform: 'translate3d(0, 0 ,0) scale(1)'
         }}>
-        {style => (
-          <div style={{ ...styles.root, ...style}}>
-            <div style={styles.profile} />
-            <div style={styles.container}>
-              <div style={styles.title} />
-              <div style={styles.desc} />
-              <div style={styles.desc} />
-              <div style={styles.desc} />
-            </div>
+        <div style={styles.root}>
+          <div style={styles.profile} />
+          <div style={styles.container}>
+            <div style={styles.title} />
+            <div style={styles.desc} />
+            <div style={styles.desc} />
+            <div style={styles.desc} />
           </div>
-        )}
-      </Spring>
+        </div>
+      </Animation>
     )
   }
 }
