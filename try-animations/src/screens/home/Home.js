@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import ReactTransitionGroup from './ReactTransitionGroup'
-import { images } from '../../assets'
+import List from '../../components/List'
 
 const styles = {
   root: {
@@ -17,8 +16,8 @@ export default class App extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <h1>React Animation Demos</h1>
-        <ReactTransitionGroup />
+        <h1>React Animation Demo</h1>
+        <List numberOfItems={10}/>
       </div>
     );
   }
