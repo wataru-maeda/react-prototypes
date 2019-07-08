@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Animation from '../Animation'
+import { Spring, anim } from '../Spring'
 import { colors } from '../../styles/theme'
 
 const styles = {
@@ -41,19 +41,10 @@ export default class ListItem extends Component {
   render() {
     const { delay = 0 } = this.props
     return (
-      <Animation
-        config={{
-          delay,
-          duration: 250,
-        }}
-        from={{
-          opacity: 0,
-          transform: 'translate3d(0, 20px, 0) scale(0.9)'
-        }}
-        to={{
-          opacity: 1,
-          transform: 'translate3d(0, 0 ,0) scale(1)'
-        }}>
+      <Spring
+        {...anim.listItem}
+        config={{ delay, duration: 250 }}
+      >
         <div style={styles.root}>
           <div style={styles.profile} />
           <div style={styles.container}>
@@ -63,7 +54,7 @@ export default class ListItem extends Component {
             <div style={styles.desc} />
           </div>
         </div>
-      </Animation>
+      </Spring>
     )
   }
 }

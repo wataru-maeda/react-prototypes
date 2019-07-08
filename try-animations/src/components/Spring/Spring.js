@@ -14,6 +14,7 @@ export default ({
   transitions = [],
   children,
 }) => {
+  // Trail
   if (type === 'trail') {
     const ItemsWithKey = items.map((x, i) => ({ item: x, key: i }))
     return (
@@ -28,6 +29,7 @@ export default ({
     )
   }
   
+  // Transition
   if (type === 'transition') {
     const ItemsWithKey = items.map((x, i) => ({ item: x, key: i }))
     return (
@@ -45,15 +47,16 @@ export default ({
     )
   }
 
+  // KeyFrame
   if (type === 'keyframes' || transitions.length > 0) {
-    const KAnims = Keyframes.Spring(transitions)
+    const KeySpring = Keyframes.Spring(transitions)
     return (
-      <KAnims
+      <KeySpring
         config={config}
         trail={trail}
       >
         {style => <animated.span style={style}>{children}</animated.span>}
-      </KAnims>
+      </KeySpring>
     )
   }
 
