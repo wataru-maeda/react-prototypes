@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from '../../components/Header'
 import List from '../../components/List'
 
 const styles = {
@@ -10,13 +11,11 @@ const styles = {
   }
 }
 
-// https://github.com/aholachek/react-animation-comparison
-
-export default class App extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <h1>React Animation Demo</h1>
+        <Header />
         <List numberOfItems={10}/>
       </div>
     );

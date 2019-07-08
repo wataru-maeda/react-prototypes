@@ -14,7 +14,7 @@ export default class List extends Component {
     const { numberOfItems = 0 } = this.props
     const items = [];
     for (let i = 0; i <= numberOfItems; i++)
-      items.push(<ListItem key={i} />)
+      items.push(<ListItem key={i} delay={i * 60}/>)
     return items
 
   }
