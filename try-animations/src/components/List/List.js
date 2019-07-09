@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Spring, anim } from '../Spring'
 import ListItem from '../ListItem'
 
 const styles = {
@@ -10,18 +11,22 @@ const styles = {
 }
 
 export default class List extends Component {
-  renderItems = () => {
-    const { numberOfItems = 0 } = this.props
-    const items = [];
-    for (let i = 0; i <= numberOfItems; i++)
-      items.push(<ListItem key={i} delay={i * 60}/>)
-    return items
-
+  state = {
+    anmType: 'popup'
   }
+
   render() {
+    const { items = [] } = this.props
     return (
       <div style={styles.root}>
-        {this.renderItems()}
+        <Spring
+          config={{ duration: 250 }}
+          {...anim.list}
+          items={items}
+          >{() => (
+            <ListItem onClick={() => this.setState({ anmType: 'popup' })} />
+          )}
+        </Spring>
       </div>
     )
   }

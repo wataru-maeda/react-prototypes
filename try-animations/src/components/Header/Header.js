@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Spring, anim } from '../Spring'
 import { colors } from '../../styles/theme'
 
 const styles = {
@@ -13,12 +14,34 @@ const styles = {
   }
 }
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div style={styles.root}>
-        <h1 style={styles.title}>React Animation Demo</h1>
-      </div>
-    )
-  }
-}
+export default () => (
+  <div style={styles.root}>
+    <Spring
+      items={[
+        'r',
+        'e',
+        'a',
+        'c',
+        't',
+        '-',
+        'a',
+        'n',
+        'i',
+        'm',
+        'a',
+        't',
+        'i',
+        'o',
+        'n',
+        '-',
+        'd',
+        'e',
+        'm',
+        'o',
+      ]}
+      {...anim.trailChars}
+    >
+      {item => <h1 style={styles.title}>{item}</h1>}
+    </Spring>
+  </div>
+)

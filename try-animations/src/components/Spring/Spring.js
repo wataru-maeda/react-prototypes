@@ -2,7 +2,7 @@ import React from 'react'
 import { Spring, Trail, Transition, Keyframes, animated } from 'react-spring/renderprops'
 
 export default ({
-  type = 'spring',
+  type = '',
   items = [],
   config = {},
   from = {},
@@ -14,6 +14,19 @@ export default ({
   transitions = [],
   children,
 }) => {
+  // Spring
+  if (type === 'spring') {
+    return (
+      <Spring
+        config={config}
+        from={from}
+        to={to} 
+      >
+        {style => <animated.span style={style}>{children}</animated.span>}
+      </Spring>
+    )
+  }
+
   // Trail
   if (type === 'trail') {
     const ItemsWithKey = items.map((x, i) => ({ item: x, key: i }))
@@ -59,15 +72,6 @@ export default ({
       </KeySpring>
     )
   }
-
-  // Spring
-  return (
-    <Spring
-      config={config}
-      from={from}
-      to={to} 
-    >
-      {style => <animated.span style={style}>{children}</animated.span>}
-    </Spring>
-  )
+  // None
+  return children
 }
