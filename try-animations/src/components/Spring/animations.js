@@ -88,10 +88,21 @@ const shrink = {
   }
 }
 
+const intro = {
+  type: 'keyframes',
+  transitions: [
+    { width: 100, height: 100, borderRadius: 50 },
+    { width: 50, height: 50, borderRadius: 25 },
+    { width: 200, height: 200, borderRadius: 100 },
+    { width: 20, height: 20, borderRadius: 10 }
+  ]
+}
+
 export default {
   popup,
   list,
   trailChars,
   expand,
   shrink,
+  intro,
 }

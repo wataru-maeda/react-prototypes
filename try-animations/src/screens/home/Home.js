@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../components/Header'
 import Controller from '../../components/Controller'
 import List from '../../components/List'
+import Placeholder from '../../components/Placeholder'
 
 const styles = {
   root: {
@@ -40,7 +41,8 @@ export default class Home extends Component {
           onClickAdd={this.onClickAdd}
           onClickDel={this.onClickDel}
         />
-        <List items={items}/>
+        {items.length === 0 && <Placeholder />}
+        {items.length > 0 && <List items={items}/>}
       </div>
     );
   }
