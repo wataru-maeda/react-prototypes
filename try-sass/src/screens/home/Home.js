@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { images } from '../../assets'
-import './Home.css'
+import './home.css'
 
 export default class App extends Component {
   render() {
