@@ -20,7 +20,7 @@ export default class List extends Component {
     return (
       <div style={styles.root}>
         <Spring
-          config={{ duration: 250 }}
+          config={{ duration: 100 }}
           {...anim.list}
           items={items}
           >{() => (
