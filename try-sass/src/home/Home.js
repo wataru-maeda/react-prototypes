@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div className="root">
-        sasa
+        <div className="container" />
       </div>
     );
   }
